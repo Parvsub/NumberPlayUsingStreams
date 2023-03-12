@@ -6,13 +6,9 @@ import java.util.stream.Stream;
 
 public class CreationStreams {
     public static void main(String[] args) {
-        Integer maxNumber = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9,56).filter(num->num%2==0)
-                .max(Comparator.comparing(Integer::valueOf)).filter(num->num%2==0).get();
-        System.out.println(maxNumber);
-
-        Integer minNumber = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9).filter(num->num%2==0)
-                .min(Comparator.comparing(Integer::valueOf)).get();
-
-        System.out.println(minNumber);
+        List<Integer> primes = Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29);
+        IntSummaryStatistics result = primes.stream()
+                .mapToInt((x) -> x).summaryStatistics();
+        System.out.print(result);
     }
 }
