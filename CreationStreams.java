@@ -7,8 +7,7 @@ import java.util.stream.Collectors;
 
 public class CreationStreams {
     public static void main(String[] args) {
-        List<Integer> list = Arrays.asList(2,4,6,8,10,4,5,8,2);
-        String squares = list.stream().map(String :: valueOf).collect(Collectors.joining());
-        System.out.println(squares);
+        List<Integer> list = Arrays.asList(2,4,6,8,10,4,5,3,9,5);
+        list.stream().filter(n->n % 2 ==0).forEach(System.out::println);
     }
 }
